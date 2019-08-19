@@ -1,0 +1,9 @@
+.sapl-scroll-loader {
+  text-align: center;
+  display: none;
+  transition: height 0.3s;
+}
+
+.sapl-scroll-loader img {
+  display: inline-block;
+}

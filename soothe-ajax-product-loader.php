@@ -22,7 +22,22 @@
 /*
  * Include Admin Page script
  */
-include plugin_dir_path(__FILE__) . '/admin/page-admin.php';
+include plugin_dir_path(__FILE__) . 'admin/page-admin.php';
+
+/*
+ * Include Front assets
+ */
+include plugin_dir_path(__FILE__) . 'front/include-assets.php';
+
+/*
+ * Include Core
+ */
+include plugin_dir_path(__FILE__) . 'core.php';
+
+/*
+ * Include Requests
+ */
+include plugin_dir_path(__FILE__) . 'back/requests.php';
 
 /**
  * Change number of products that are displayed per page (shop page)
