@@ -13,3 +13,22 @@
  * Text Domain:       soothe-ajax-product-loader
  * Domain Path:       /languages
  */
+
+// Debug
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
+/*
+ * Include Admin Page script
+ */
+include plugin_dir_path(__FILE__) . '/admin/page-admin.php';
+
+/**
+ * Change number of products that are displayed per page (shop page)
+ */
+add_filter( 'loop_shop_per_page', 'pzl_products_per_page', 20 );
+function pzl_products_per_page( $cols ) {
+  $cols = get_option('salp_product_amount');
+  return $cols;
+}

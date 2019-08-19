@@ -48,20 +48,21 @@ class Sapl_Ajax_Page_Admin {
 
   public static function get_settings() {
     $settings = array(
-      'section_title' => array(
-        'name' => __( 'Main Settings', 'soothe-ajax-product-loader' ),
-        'type' => 'title',
-        'desc' => 'This is main settings which are required for Ajax Loader to work properly.',
-        'id'   => 'salp_section_title'
+      'section_main' => array(
+        'title' => __( 'Main Settings', 'soothe-ajax-product-loader' ),
+        'type'  => 'title',
+        'desc'  => 'This is main settings which are required for Ajax Loader to work properly.',
+        'id'    => 'salp_section_main'
       ),
       'type' => array(
         'name'    => __( 'Type', 'soothe-ajax-product-loader' ),
         'type'    => 'radio',
         'id'      => 'salp_type',
         'options' => array(
-          'Infinite Scroll',
-          'Load More Button'
-        )
+          'scroll' => 'Infinite Scroll',
+          'button' => 'Load More Button'
+        ),
+        'default'  => 'scroll'
       ),
       'product_amount' => array(
         'name' => __( 'Product per Page', 'soothe-ajax-product-loader' ),
@@ -77,18 +78,42 @@ class Sapl_Ajax_Page_Admin {
         'css'  => 'width: 50px;',
         'desc_tip' =>'Products amount that will be loaded with Ajax on Shop page.'
       ),
+      'section_main_end' => array(
+        'type' => 'sectionend',
+        'id'   => 'salp_section_main'
+      ),
+
+      'section_effects' => array(
+        'title' => __('Effects Settings', 'soothe-ajax-product-loader'),
+        'type'  => 'title',
+        'desc'  => 'Additional Effects to prettify loading',
+        'id'    => 'salp_section_effects'
+      ),
       'product_load_animation' => array(
-        'name' => __('Load Animation', 'soothe-ajax-product-loader'),
+        'name' => __('Loader', 'soothe-ajax-product-loader'),
         'type' => 'radio',
-        'id'   => 'sapl_product_load_animation',
-        'options'  => array(
-          'Yes', 'No'
+        'id'   => 'sapl_product_loader',
+        'options' => array(
+          'yes'   => 'Yes',
+          'no'   => 'No'
         ),
+        'default'  => 'no',
+        'desc_tip' => 'While products is loading, nice svg/gif loader may be showing.'
+      ),
+      'proudct_show_animation' => array(
+        'name' => __('Show Animation', 'soothe-ajax-product-loader'),
+        'type' => 'radio',
+        'id'   => 'sapl_product_show_animation',
+        'options' => array(
+          'yes'   => 'Yes',
+          'no'   => 'No'
+        ),
+        'default'  => 'no',
         'desc_tip' => 'Product can load with cute animation.'
       ),
-      'section_end' => array(
+      'section_effects_end' => array(
         'type' => 'sectionend',
-        'id'   => 'salp_section_end'
+        'id'   => 'salp_section_effects'
       )
     );
     return apply_filters( 'wc_settings_tab_demo_settings', $settings );
