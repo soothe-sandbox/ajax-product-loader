@@ -42,8 +42,8 @@ include plugin_dir_path(__FILE__) . 'back/requests.php';
 /**
  * Change number of products that are displayed per page (shop page)
  */
-add_filter( 'loop_shop_per_page', 'pzl_products_per_page', 20 );
-function pzl_products_per_page( $cols ) {
+add_filter( 'loop_shop_per_page', 'salp_products_per_page', 20 );
+function salp_products_per_page( $cols ) {
   $cols = get_option('salp_product_amount');
   return $cols;
 }

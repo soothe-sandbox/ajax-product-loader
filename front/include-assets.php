@@ -5,11 +5,20 @@ function salp_add_front_assets()
   wp_register_script(
     'js-salp-front',
     plugin_dir_url(__FILE__) . 'assets/salp-front.js',
-    array( 'jquery' ),
+    array( 'jquery', 'js-anime' ),
     plugin_dir_path(__FILE__) . 'assets/salp-front.js',
     true
   );
   wp_enqueue_script( 'js-salp-front' );
+
+  wp_register_script(
+    'js-anime',
+    plugin_dir_url(__FILE__) . 'assets/lib/anime.min.js',
+    array(  ),
+    '',
+    true
+  );
+  wp_enqueue_script( 'js-anime' );
 
   wp_localize_script(
     'js-salp-front',
